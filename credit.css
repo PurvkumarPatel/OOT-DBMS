@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+
 }
 
 body{
@@ -44,7 +45,35 @@ navbar-brand img{
 .navbar-toggler
 {
     outline: none !important;
+
 }
+
+/* Customize Signup Modal */
+
+  #signupModal .modal-title {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
+  
+  #signupModal button.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  #signupModal button.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
+  
+  #signupModal button.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  }
+  
+  #signupModal input.form-control {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+
 #banner
 {
     background-image: linear-gradient(to right , #a517ba,#5f1782);
@@ -159,3 +188,33 @@ hr{
     padding-bottom: 20px;
     text-align: center;
 }
+.slideshow__controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .slideshow__controls-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .slideshow__control {
+    margin: 0 50px;
+  }
+  
+  .slideshow__control:first-child {
+    margin-left: 0;
+  }
+  
+  .slideshow__control:last-child {
+    margin-right: 0;
+  }
+  
+  .slideshow__btn {
+    cursor: pointer;
+  }
+  

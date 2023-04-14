@@ -1,27 +1,38 @@
-const forms = document.querySelector(".forms"),
-pwShowHide = document.querySelectorAll(".eye-icon"),
-links = document.querySelectorAll(".link");
 
-pwShowHide.forEach(eyeIcon => {
-eyeIcon.addEventListener("click", () => {
-  let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
-  
-  pwFields.forEach(password => {
-      if(password.type === "password"){
-          password.type = "text";
-          eyeIcon.classList.replace("bx-hide", "bx-show");
-          return;
-      }
-      password.type = "password";
-      eyeIcon.classList.replace("bx-show", "bx-hide");
-  })
-  
-})
-})      
+// Get the form and submit button
+const signupForm = document.querySelector('#signupModal form');
+const submitButton = document.querySelector('#signupModal button[type="submit"]');
 
-links.forEach(link => {
-link.addEventListener("click", e => {
- e.preventDefault(); //preventing form submit
- forms.classList.toggle("show-signup");
-})
-})
+// Add an event listener to the submit button
+submitButton.addEventListener('click', function(event) {
+  // Prevent the form from submitting
+  event.preventDefault();
+
+  // Get the name, email, and password fields
+  const nameInput = document.querySelector('#signupModal #name');
+  const emailInput = document.querySelector('#signupModal #email');
+  const passwordInput = document.querySelector('#signupModal #password');
+
+  // Validate the name field
+  if (nameInput.value.trim() === '') {
+    alert('Please enter your name.');
+    return;
+  }
+
+  // Validate the email field
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(emailInput.value)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Validate the password field
+  if (passwordInput.value.length < 8) {
+    alert('Please enter a password that is at least 8 characters long.');
+    return;
+  }
+
+  // If all fields are valid, submit the form
+  alert('Form submitted successfully!');
+  signupForm.submit();
+});
